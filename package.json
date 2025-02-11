@@ -1,15 +1,24 @@
 {
-  "name": "vite-project",
+  "name": "lee-storybook",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
+  "description": "A personal storybook full of my components",
+  "main": "src/export.tsx",
+  "author": "Edward Lee",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/leedjr-97/lee-storybook"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "package": "yarn prepackage && NODE_ENV=production webpack",
+    "prepackage": "mkdir -p ./lib && rm -rf ./lib/*"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -32,15 +41,22 @@
     "@types/react": "^19.0.8",
     "@types/react-dom": "^19.0.3",
     "@vitejs/plugin-react": "^4.3.4",
+    "babel-cli": "^6.22.2",
+    "babel-loader": "^7.1.0",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-react": "^6.22.0",
     "eslint": "^9.19.0",
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.18",
     "eslint-plugin-storybook": "^0.11.2",
     "globals": "^15.14.0",
+    "prop-types": "^15.5.10",
+    "react-dom": "^15.6.1",
     "storybook": "^8.5.3",
     "typescript": "~5.7.2",
     "typescript-eslint": "^8.22.0",
-    "vite": "^6.1.0"
+    "vite": "^6.1.0",
+    "webpack": "^3.0.0"
   },
   "eslintConfig": {
     "extends": [
