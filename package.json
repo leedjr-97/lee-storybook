@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "type": "module",
   "description": "A personal storybook full of my components",
-  "main": "src/export.tsx",
+  "main": "src/export.ts",
   "author": "Edward Lee",
   "repository": {
     "type": "git",
