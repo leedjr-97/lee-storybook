@@ -5,7 +5,6 @@ import {
   DialogTitle,
   IconButton,
 } from "@mui/material";
-import { useState } from "react";
 import { DeleteButton } from "../../Interactable/Buttons/DeleteButton";
 import { ConfirmButton } from "../../Interactable/Buttons/ConfirmButton";
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
@@ -30,8 +29,6 @@ export const BasicDialog = ({
 
   handleCancel,
 }: BasicDialogProps) => {
-  const [] = useState();
-
   const handleClose = () => {
     toggleDialog(false);
   };
