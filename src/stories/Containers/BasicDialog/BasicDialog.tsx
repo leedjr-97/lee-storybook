@@ -18,6 +18,9 @@ export interface BasicDialogProps {
   closeIcon?: boolean;
 
   handleCancel?: () => void;
+  cancelText?: string;
+  handleConfirm?: () => void;
+  confirmText?: string;
 }
 
 export const BasicDialog = ({
@@ -28,6 +31,9 @@ export const BasicDialog = ({
   closeIcon = true,
 
   handleCancel,
+  cancelText = "Cancel",
+  handleConfirm,
+  confirmText,
 }: BasicDialogProps) => {
   const handleClose = () => {
     toggleDialog(false);
@@ -53,11 +59,18 @@ export const BasicDialog = ({
 
       <DialogContent>{children}</DialogContent>
 
-      <DialogActions>
-        <DeleteButton onClick={handleCancel ?? handleClose} title={"Cancel"} />
+      {(handleCancel || handleConfirm) && (
+        <DialogActions>
+          <DeleteButton
+            onClick={handleCancel ?? handleClose}
+            title={cancelText}
+          />
 
-        <ConfirmButton onClick={() => {}} />
-      </DialogActions>
+          {handleConfirm && (
+            <ConfirmButton onClick={handleConfirm} title={confirmText} />
+          )}
+        </DialogActions>
+      )}
     </Dialog>
   );
 };
