@@ -5,10 +5,11 @@ import {
   TextField,
 } from "@mui/material";
 import { SelectOption } from "../../types";
+import { useMemo } from "react";
 
 export interface BasicAutocompleteProps {
   label?: string;
-  value: SelectOption | null;
+  value: SelectOption | number | null;
   options: SelectOption[];
   onChange: (value: SelectOption | null) => void;
 
@@ -27,10 +28,16 @@ export const BasicAutocomplete = ({
   maxOptionHeight,
   errorText,
 }: BasicAutocompleteProps) => {
+  const actualValue = useMemo(() => {
+    if (typeof value === "number") {
+      return options?.find((option) => option.id === value);
+    }
+    return value;
+  }, [value, options]);
   return (
     <FormControl fullWidth>
       <Autocomplete
-        value={value}
+        value={actualValue}
         isOptionEqualToValue={(option, value) => option.id === value.id}
         options={options}
         onChange={(_, value) => {
