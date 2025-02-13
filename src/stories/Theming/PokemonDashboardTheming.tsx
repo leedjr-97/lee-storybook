@@ -1,9 +1,9 @@
-import ChakraPetch from "../assets/fonts/Chakra_Petch/ChakraPetch-Regular.ttf";
-import ChakraPetchItalic from "../assets/fonts/Chakra_Petch/ChakraPetch-Italic.ttf";
-import ChakraPetchBold from "../assets/fonts/Chakra_Petch/ChakraPetch-Bold.ttf";
-import ChakraPetchLight from "../assets/fonts/Chakra_Petch/ChakraPetch-Light.ttf";
-import ChakraPetchMedium from "../assets/fonts/Chakra_Petch/ChakraPetch-Medium.ttf";
-// import ChakraPetch from '../assets/fonts/Chakra_Petch/ChakraPetch-Regular.ttf'
+import {
+  ChakraPetch,
+  ChakraPetchBold,
+  ChakraPetchLight,
+  ChakraPetchMedium,
+} from "./fonts/index";
 import {
   PaletteMode,
   alpha,
