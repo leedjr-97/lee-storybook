@@ -10,7 +10,7 @@ export interface AreYouSureDialogProps {
   onCancel: () => void;
 }
 
-export default function AreYouSureDialog({
+export const AreYouSureDialog = ({
   isOpen,
   toggleDialog,
   title = "Are You Sure",
@@ -18,7 +18,7 @@ export default function AreYouSureDialog({
 
   onCancel,
   onConfirm,
-}: AreYouSureDialogProps) {
+}: AreYouSureDialogProps) => {
   return (
     <BasicDialog
       isOpen={isOpen}
@@ -30,4 +30,4 @@ export default function AreYouSureDialog({
       confirmText={"Confirm"}
     />
   );
-}
+};

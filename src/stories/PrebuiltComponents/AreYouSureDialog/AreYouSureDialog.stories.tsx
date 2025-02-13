@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react/*";
-import AreYouSureDialog, { AreYouSureDialogProps } from "./AreYouSureDialog";
+import { AreYouSureDialog, AreYouSureDialogProps } from "./AreYouSureDialog";
 import { BasicButton } from "../../Interactable";
 import { useState } from "react";
 

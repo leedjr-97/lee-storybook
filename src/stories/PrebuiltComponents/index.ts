@@ -1,3 +1,3 @@
-export * from "./AreYouSureDialog/AreYouSureDialog";
+export { AreYouSureDialog } from "./AreYouSureDialog/AreYouSureDialog";
 export { CreateWidget } from "./Dashboard/CreateWidget";
 export { DashboardWidget } from "./Dashboard/DashboardWidget";
