@@ -26,6 +26,7 @@ export interface BasicDrawerProps {
 
   // UI
   placement?: "right" | "left" | "top" | "bottom";
+  backgroundColor?: string;
   drawerWidth?: number;
 }
 
@@ -48,6 +49,7 @@ export const BasicDrawer = ({
 
   // UI
   placement = "right",
+  backgroundColor,
   drawerWidth = 500,
 }: BasicDrawerProps) => {
   const handleClose = () => {
@@ -55,7 +57,16 @@ export const BasicDrawer = ({
   };
 
   return (
-    <Drawer open={isOpen} onClose={handleClose} anchor={placement}>
+    <Drawer
+      open={isOpen}
+      onClose={handleClose}
+      anchor={placement}
+      PaperProps={{
+        style: {
+          background: backgroundColor, //theme.palette.background.default,
+        },
+      }}
+    >
       <div
         style={{
           width: `${drawerWidth}px`,
