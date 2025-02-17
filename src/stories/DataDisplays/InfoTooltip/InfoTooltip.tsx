@@ -20,6 +20,7 @@ export interface InfoTooltipProps {
   size?: "small" | "medium" | "large";
   tooltipStyles?: React.CSSProperties;
   iconButtonStyles?: React.CSSProperties;
+  iconColor?: string;
 }
 
 export const InfoTooltip = ({
@@ -28,6 +29,7 @@ export const InfoTooltip = ({
   size,
   tooltipStyles,
   iconButtonStyles,
+  iconColor,
 }: InfoTooltipProps) => {
   return (
     <Tooltip
@@ -40,7 +42,10 @@ export const InfoTooltip = ({
       style={tooltipStyles}
     >
       <IconButton style={iconButtonStyles}>
-        <InfoOutlinedIcon fontSize={size ?? "medium"} />
+        <InfoOutlinedIcon
+          fontSize={size ?? "medium"}
+          style={{ color: iconColor }}
+        />
       </IconButton>
     </Tooltip>
   );
