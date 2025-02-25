@@ -1,0 +1,1 @@
+import{j as r}from"./jsx-runtime-D_zvdyIk.js";import{B as a}from"./Button-Sn30byPN.js";import{C as n}from"./CircularProgress-B6eBX4kq.js";const x=({title:t,onClick:s,loading:o,...i})=>r.jsxs(a,{variant:"contained",onClick:s,...i,children:[o&&r.jsx(n,{size:16,style:{marginRight:"8px"}}),t]});export{x as B};
