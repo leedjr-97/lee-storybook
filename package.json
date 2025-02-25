@@ -65,6 +65,9 @@
     "vite": "^6.1.0",
     "webpack": "^3.0.0"
   },
+  "optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "*"
+  },
   "eslintConfig": {
     "extends": [
       "plugin:storybook/recommended"
