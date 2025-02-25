@@ -1,27 +1,13 @@
-# Workflow name
-name: Build and Publish Storybook to GitHub Pages
+name: Build and Publish storybook to GitHub Pages
 
 on:
-  # Event for the workflow to run on
   push:
     branches:
       - "main"
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-# List of jobs
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    # Job steps
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Build and deploy Storybook
-        uses: leedjr-97/actions-gh-pages@v3
-        with:
-          publish_dir: ./storybook-static
+    - uses: leedjr-97/github-actions-storybook-to-github-pages@v1.0.0
+      with:
+        path: ./storybook-static
