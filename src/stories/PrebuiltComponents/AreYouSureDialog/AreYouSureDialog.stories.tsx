@@ -27,7 +27,17 @@ const BasicUsage = (props: AreYouSureDialogProps) => {
         }}
       />
 
-      <AreYouSureDialog {...props} isOpen={isOpen} toggleDialog={toggleOpen} />
+      <AreYouSureDialog
+        {...props}
+        isOpen={isOpen}
+        toggleDialog={toggleOpen}
+        onCancel={() => {
+          toggleOpen(false);
+        }}
+        onConfirm={() => {
+          toggleOpen(false);
+        }}
+      />
     </>
   );
 };
