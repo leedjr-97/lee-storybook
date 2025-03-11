@@ -7,10 +7,10 @@ import {
 import { SelectOption } from "../../types";
 import { useMemo } from "react";
 
-export interface BasicAutocompleteProps {
+export interface BasicAutocompleteProps<T extends SelectOption> {
   label?: string;
   value: SelectOption | number | null;
-  options: SelectOption[];
+  options: T[];
   onChange: (value: SelectOption | null) => void;
 
   loading?: boolean;
@@ -18,7 +18,7 @@ export interface BasicAutocompleteProps {
   errorText?: string;
 }
 
-export const BasicAutocomplete = ({
+export function BasicAutocomplete<T extends SelectOption>({
   label,
   value,
   options,
@@ -27,7 +27,7 @@ export const BasicAutocomplete = ({
   loading,
   maxOptionHeight,
   errorText,
-}: BasicAutocompleteProps) => {
+}: BasicAutocompleteProps<T>) {
   const actualValue = useMemo(() => {
     if (typeof value === "number") {
       return options?.find((option) => option.id === value);
@@ -58,4 +58,4 @@ export const BasicAutocomplete = ({
       {errorText && <FormHelperText error>{errorText}</FormHelperText>}
     </FormControl>
   );
-};
+}

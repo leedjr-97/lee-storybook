@@ -17,6 +17,28 @@ const options: SelectOption[] = [
     name: "Option 3",
   },
 ];
+
+interface GenericsOption extends SelectOption {
+  extra: string | null;
+}
+const optionsUsingGenerics: GenericsOption[] = [
+  {
+    id: 0,
+    name: "Option 1",
+    extra: "An extra parameter",
+  },
+  {
+    id: 1,
+    name: "Option 2",
+    extra: "Another extra parameter",
+  },
+  {
+    id: 2,
+    name: "Option 3",
+    extra: null,
+  },
+];
+
 const meta = {
   title: "Interactable/BasicAutocomplete",
   component: BasicAutocomplete,
@@ -29,7 +51,9 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const BasicUsage = (props: BasicAutocompleteProps) => {
+const BasicUsage = (
+  props: BasicAutocompleteProps<SelectOption | GenericsOption>
+) => {
   const [value, setValue] = useState<SelectOption | null>(null);
 
   return (
@@ -52,5 +76,15 @@ export const Autocomplete: Story = {
     value: null,
     onChange: () => {},
     options: options,
+  },
+};
+
+export const AutocompleteWithAnotherParameter: Story = {
+  render: (props) => <BasicUsage {...props} />,
+  args: {
+    label: "Autocomplete",
+    value: null,
+    onChange: () => {},
+    options: optionsUsingGenerics,
   },
 };
