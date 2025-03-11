@@ -9,9 +9,9 @@ import { useMemo } from "react";
 
 export interface BasicAutocompleteProps<T extends SelectOption> {
   label?: string;
-  value: SelectOption | number | null;
+  value: T | number | null;
   options: T[];
-  onChange: (value: SelectOption | null) => void;
+  onChange: (value: T | null) => void;
 
   loading?: boolean;
   maxOptionHeight?: number;
